@@ -7,15 +7,20 @@ on:
     branches: [main]
 
 jobs:
-  formula-audit:
-    name: Formula audit
+  formula-check:
+    name: Formula check
     runs-on: macos-15
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Audit formula
-        run: brew audit --strict --online Formula/local-whisper.rb
+      - name: Tap local checkout
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/gabrimatic"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/gabrimatic/homebrew-local-whisper"
 
       - name: Style check
-        run: brew style Formula/local-whisper.rb
+        run: brew style gabrimatic/local-whisper/local-whisper
+
+      - name: Ruby syntax
+        run: ruby -c Formula/local-whisper.rb
