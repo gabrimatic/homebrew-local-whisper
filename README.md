@@ -6,7 +6,7 @@ Local voice transcription with grammar correction for macOS. All processing runs
 
 ```bash
 brew tap gabrimatic/local-whisper
-brew install local-whisper --HEAD
+brew install local-whisper
 ```
 
 ## Setup

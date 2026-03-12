@@ -3,9 +3,8 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  # Versioned release URL (update when tagging releases)
-  # url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.3.0.tar.gz"
-  # sha256 "..."
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "a788bf5eda1b0b33763f19fffbb1739960f80437574fd067bb3d6cfb259ca72f"
   license "MIT"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
@@ -467,8 +466,8 @@ class LocalWhisper < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
-    sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
+    url "https://files.pythonhosted.org/packages/5a/b6/3e681d3b6bb22647509bdbfdd18055d5adc0dce5c5585359fa46ff805fdc/typer-0.24.0.tar.gz"
+    sha256 "f9373dc4eff901350694f519f783c29b6d7a110fc0dcc11b1d7e353b85ca6504"
   end
 
   resource "typer-slim" do
@@ -509,6 +508,11 @@ class LocalWhisper < Formula
   resource "wrapt" do
     url "https://files.pythonhosted.org/packages/2e/64/925f213fdcbb9baeb1530449ac71a4d57fc361c053d06bf78d0c5c7cd80c/wrapt-2.1.2.tar.gz"
     sha256 "3996a67eecc2c68fd47b4e3c564405a5777367adfd9b8abb58387b63ee83b21e"
+  end
+
+  resource "apple-fm-sdk" do
+    url "https://github.com/apple/python-apple-fm-sdk/archive/refs/tags/v0.1.1.tar.gz"
+    sha256 "2603c370b3d8868095c68fdbe2b07b2af83a9f6c3b67e3aa5c29523edb886be7"
   end
 
   def install
