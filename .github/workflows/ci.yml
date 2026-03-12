@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  formula-audit:
+    name: Formula audit
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit formula
+        run: brew audit --strict --online Formula/local-whisper.rb
+
+      - name: Style check
+        run: brew style Formula/local-whisper.rb
