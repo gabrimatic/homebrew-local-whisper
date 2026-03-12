@@ -8,10 +8,10 @@ class LocalWhisper < Formula
   license "MIT"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
-  depends_on :macos
   depends_on arch: :arm64
-  depends_on "python@3.12"
   depends_on "espeak-ng"
+  depends_on :macos
+  depends_on "python@3.12"
 
   # Platform-specific wheels (macOS arm64 only)
   resource "espeakng-loader" do
@@ -569,10 +569,10 @@ class LocalWhisper < Formula
   service do
     run [opt_bin/"wh", "_run"]
     keep_alive false
-    environment_variables HF_HUB_CACHE: "#{Dir.home}/.whisper/models",
-                          HF_HUB_OFFLINE: "1",
-                          HF_HUB_DISABLE_TELEMETRY: "1",
-                          PATH: "#{HOMEBREW_PREFIX}/bin:#{HOMEBREW_PREFIX}/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+    environment_variables PATH:                     "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+                          HF_HUB_CACHE:             "#{Dir.home}/.whisper/models",
+                          HF_HUB_OFFLINE:           "1",
+                          HF_HUB_DISABLE_TELEMETRY: "1"
     log_path var/"log/local-whisper.log"
     error_log_path var/"log/local-whisper.log"
   end
