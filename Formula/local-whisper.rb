@@ -510,6 +510,7 @@ class LocalWhisper < Formula
     sha256 "3996a67eecc2c68fd47b4e3c564405a5777367adfd9b8abb58387b63ee83b21e"
   end
 
+  # Not published on PyPI; source from GitHub
   resource "apple-fm-sdk" do
     url "https://github.com/apple/python-apple-fm-sdk/archive/refs/tags/v0.1.1.tar.gz"
     sha256 "2603c370b3d8868095c68fdbe2b07b2af83a9f6c3b67e3aa5c29523edb886be7"
