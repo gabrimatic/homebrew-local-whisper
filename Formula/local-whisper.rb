@@ -4,7 +4,7 @@ class LocalWhisper < Formula
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
   url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "a788bf5eda1b0b33763f19fffbb1739960f80437574fd067bb3d6cfb259ca72f"
+  sha256 "546721c8f5ed008f8540eeefc4a57e5bd0bf650566c206e63a1a588f3d0cb09a"
   license "MIT"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
@@ -541,10 +541,18 @@ class LocalWhisper < Formula
               <string>com.local-whisper.ui</string>
               <key>CFBundleName</key>
               <string>Local Whisper</string>
+              <key>CFBundleVersion</key>
+              <string>1.3.0</string>
+              <key>CFBundleShortVersionString</key>
+              <string>1.3.0</string>
+              <key>NSPrincipalClass</key>
+              <string>NSApplication</string>
               <key>LSUIElement</key>
               <true/>
               <key>NSHighResolutionCapable</key>
               <true/>
+              <key>CFBundlePackageType</key>
+              <string>APPL</string>
             </dict>
             </plist>
           XML
