@@ -485,7 +485,7 @@ class LocalWhisper < Formula
   end
 
   resource "uritemplate" do
-    url "https://files.pythonhosted.org/packages/a9/99/3ae339466c9183ea5b8ae67b34c0b897eda475d2aec2307cae60e5cd4f29/uritemplate-4.2.0-py3-none-any.whl"
+    url "https://files.pythonhosted.org/packages/a9/99/3ae339466c9183ea5b8ae87b34c0b897eda475d2aec2307cae60e5cd4f29/uritemplate-4.2.0-py3-none-any.whl"
     sha256 "962201ba1c4edcab02e60f9a0d3821e82dfc5d2d6662a21abd533879bdb8a686"
   end
 
