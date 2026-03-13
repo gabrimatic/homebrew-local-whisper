@@ -516,8 +516,32 @@ class LocalWhisper < Formula
     sha256 "2603c370b3d8868095c68fdbe2b07b2af83a9f6c3b67e3aa5c29523edb886be7"
   end
 
+  # Resources that are distributed as platform-specific wheels (no sdist).
+  # These must be installed with pip allowing binary packages.
+  WHEEL_RESOURCES = %w[espeakng-loader mlx mlx-metal torch].freeze
+
   def install
-    virtualenv_install_with_resources
+    # Install wheel-only resources first (they have no setup.py/pyproject.toml)
+    venv = virtualenv_create(libexec, "python3.12")
+    WHEEL_RESOURCES.each do |name|
+      r = resource(name)
+      r.stage do
+        # Find the .whl file in the staged directory
+        whl = Dir["*.whl"].first
+        if whl
+          venv.pip_install Pathname.pwd/whl
+        else
+          venv.pip_install Pathname.pwd
+        end
+      end
+    end
+
+    # Install remaining resources (sdists) and the formula itself
+    resources.each do |r|
+      next if WHEEL_RESOURCES.include?(r.name)
+      r.stage { venv.pip_install Pathname.pwd }
+    end
+    venv.pip_install_and_link buildpath
 
     # Build Swift UI if Xcode is available and macOS 26 SDK is present
     swift_ui_dir = buildpath/"LocalWhisperUI"
@@ -563,7 +587,14 @@ class LocalWhisper < Formula
 
   def post_install
     (var/"local-whisper").mkpath
+    models_dir = Pathname.new(Dir.home)/".whisper/models"
+    models_dir.mkpath
     quiet_system libexec/"bin/python", "-m", "spacy", "download", "en_core_web_sm"
+    # Pre-download the default ASR model so the service works offline immediately
+    quiet_system libexec/"bin/python", "-c",
+      "from huggingface_hub import snapshot_download; " \
+      "snapshot_download('mlx-community/Qwen3-ASR-1.7B-bf16', " \
+      "cache_dir='#{models_dir}')"
   end
 
   service do
