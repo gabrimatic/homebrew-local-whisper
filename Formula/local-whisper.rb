@@ -130,13 +130,13 @@ class LocalWhisper < Formula
   end
 
   resource "curated-tokenizers" do
-    url "https://files.pythonhosted.org/packages/90/e8/4b5a4f8774f59badf1bc4fadc3ba2aa27b07308556cabe10bd7ab70a6de3/curated_tokenizers-2.0.0-cp312-cp312-macosx_11_0_arm64.whl"
-    sha256 "99562bbb36e6ec54f6a6cc41c73a2adb8002ec723c2670dcfcb2eee7f384f8a5"
+    url "https://files.pythonhosted.org/packages/34/fb/d6e57b1155bee398f43de58ecdcdda44957e9635183312ac0820a19fc94d/curated_tokenizers-0.0.9-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "2abbb571666a9c9b3a15f9df022e25ed1137e9fa8346788aaa747c00f940a3c6"
   end
 
   resource "curated-transformers" do
-    url "https://files.pythonhosted.org/packages/1d/16/62dcf539c53ec0a7f27c308e4665aecd4e4eafa0c3b7d4fe544ab9409525/curated_transformers-2.0.1-py2.py3-none-any.whl"
-    sha256 "5da92a4bf41a8a0bebca39b65ede4db49a7bc78467ca3c3ba7f84ecdcc8c45e5"
+    url "https://files.pythonhosted.org/packages/d6/67/3b72b3fdfcadab61bc8f59c17e63770e526ffabd583ed32f174a7c01af85/curated_transformers-0.1.1-py2.py3-none-any.whl"
+    sha256 "d716063d73d803c6925d2dab56fde9b9ab8e89e663c2c0587804944ba488ff01"
   end
 
   resource "cymem" do
@@ -420,8 +420,8 @@ class LocalWhisper < Formula
   end
 
   resource "spacy-curated-transformers" do
-    url "https://files.pythonhosted.org/packages/65/4a/9c2b5d676f820e2d3672d8532def8a193e8cb9530824ce16b232b707c1a0/spacy_curated_transformers-2.1.2-py2.py3-none-any.whl"
-    sha256 "d4d526d6554d2aa404118911295f154798387b8ef8a932338586535b70f13519"
+    url "https://files.pythonhosted.org/packages/42/d8/f053d43125ae4ad14f3e2a12a475a656128233f1f40a272c6e09a05c73e8/spacy_curated_transformers-0.3.1-py2.py3-none-any.whl"
+    sha256 "503559b6a1d6e44ec2c978e18ed871ce5c3d56871dc9216c0e1523428204e610"
   end
 
   resource "spacy-legacy" do
@@ -450,8 +450,8 @@ class LocalWhisper < Formula
   end
 
   resource "thinc" do
-    url "https://files.pythonhosted.org/packages/b8/c7/4300838b6314ea727d789313e40bbef2cf307c9bab45a2cee2b5bda2cc44/thinc-9.1.1-cp312-cp312-macosx_11_0_arm64.whl"
-    sha256 "e77f0877c567103601e58178bb0d24d227a081380e25ed8ab4d2f2f7438d6d6a"
+    url "https://files.pythonhosted.org/packages/fa/3a/5112dfb45d4611fc722a4a6c72272993c170fb8962ea9f412fa336ead78b/thinc-8.3.9-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "26537530704fdae123e2ce360a60f9b85d33e76a01eacee3d68fe9f48f2a965b"
   end
 
   resource "tokenizers" do
@@ -509,11 +509,6 @@ class LocalWhisper < Formula
     sha256 "6433ea84e1cfacf32021d2a4ee909554ade7fd392caa6f7c13f1f4bf7b8e8748"
   end
 
-  # Not published on PyPI; source from GitHub
-  resource "apple-fm-sdk" do
-    url "https://github.com/apple/python-apple-fm-sdk/archive/refs/tags/v0.1.1.tar.gz"
-    sha256 "2603c370b3d8868095c68fdbe2b07b2af83a9f6c3b67e3aa5c29523edb886be7"
-  end
 
   def install
     venv = virtualenv_create(libexec, "python3.12")
