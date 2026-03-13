@@ -496,7 +496,7 @@ class LocalWhisper < Formula
   end
 
   resource "wasabi" do
-    url "https://files.pythonhosted.org/packages/ac/f9/054e6e2f1062e963b5e746b48d1e3727470b2a490834d18ad92364929db3/wasabi-1.1.3.tar.gz"
+    url "https://files.pythonhosted.org/packages/ac/f9/054e6e2f1071e963b5e746b48d1e3727470b2a490834d18ad92364929db3/wasabi-1.1.3.tar.gz"
     sha256 "4bb3008f003809db0c3e28b4daf20906ea871a2bb43f9914197d540f4f2e0878"
   end
 
