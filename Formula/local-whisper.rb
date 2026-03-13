@@ -509,7 +509,6 @@ class LocalWhisper < Formula
     sha256 "6433ea84e1cfacf32021d2a4ee909554ade7fd392caa6f7c13f1f4bf7b8e8748"
   end
 
-
   def install
     venv = virtualenv_create(libexec, "python3.12")
 
