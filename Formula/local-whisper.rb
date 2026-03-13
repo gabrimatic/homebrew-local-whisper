@@ -539,6 +539,7 @@ class LocalWhisper < Formula
     # Install remaining resources (sdists) and the formula itself
     resources.each do |r|
       next if WHEEL_RESOURCES.include?(r.name)
+
       r.stage { venv.pip_install Pathname.pwd }
     end
     venv.pip_install_and_link buildpath
