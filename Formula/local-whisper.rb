@@ -13,7 +13,7 @@ class LocalWhisper < Formula
   depends_on :macos
   depends_on "python@3.12"
 
-  # Platform-specific wheels (macOS arm64 only)
+  # macOS arm64 wheels (native extensions, no sdist build possible)
   resource "espeakng-loader" do
     url "https://files.pythonhosted.org/packages/a8/26/258c0cd43b9bc1043301c5f61767d6a6c3b679df82790c9cb43a3277b865/espeakng_loader-0.2.4-py3-none-macosx_11_0_arm64.whl"
     sha256 "d27cdca31112226e7299d8562e889d3e38a1e48055c9ee381b45d669072ee59f"
@@ -34,7 +34,6 @@ class LocalWhisper < Formula
     sha256 "13ec4add8c3faaed8d13e0574f5cd4a323c11655546f91fbe6afa77b57423574"
   end
 
-  # Standard PyPI resources (sdists)
   resource "Jinja2" do
     url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
     sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
@@ -86,8 +85,8 @@ class LocalWhisper < Formula
   end
 
   resource "blis" do
-    url "https://files.pythonhosted.org/packages/d0/d0/d8cc8c9a4488a787e7fa430f6055e5bd1ddb22c340a751d9e901b82e2efe/blis-1.3.3.tar.gz"
-    sha256 "034d4560ff3cc43e8aa37e188451b0440e3261d989bb8a42ceee865607715ecd"
+    url "https://files.pythonhosted.org/packages/11/69/363c8df8d98b3cc97be19aad6aabb2c9c53f372490d79316bdee92d476e7/blis-1.3.3-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "3f6c595185176ce021316263e1a1d636a3425b6c48366c1fd712d08d0b71849a"
   end
 
   resource "catalogue" do
@@ -101,8 +100,8 @@ class LocalWhisper < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
-    sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
+    url "https://files.pythonhosted.org/packages/df/a2/781b623f57358e360d62cdd7a8c681f074a71d445418a776eef0aadb4ab4/cffi-2.0.0-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "8eca2a813c1cb7ad4fb74d368c2ffbbb4789d377ee5bb8df98373c2cc0dee76c"
   end
 
   resource "charset-normalizer" do
@@ -141,8 +140,8 @@ class LocalWhisper < Formula
   end
 
   resource "cymem" do
-    url "https://files.pythonhosted.org/packages/c0/8f/2f0fbb32535c3731b7c2974c569fb9325e0a38ed5565a08e1139a3b71e82/cymem-2.0.13.tar.gz"
-    sha256 "1c91a92ae8c7104275ac26bd4d29b08ccd3e7faff5893d3858cb6fadf1bc1588"
+    url "https://files.pythonhosted.org/packages/f9/71/f0f8adee945524774b16af326bd314a14a478ed369a728a22834e6785a18/cymem-2.0.13-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "c9251d889348fe79a75e9b3e4d1b5fa651fca8a64500820685d73a3acc21b6a8"
   end
 
   resource "dlinfo" do
@@ -171,8 +170,8 @@ class LocalWhisper < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/68/01/928fd82663fb0ab455551a178303a2960e65029da66b21974594f3a20a94/hf_xet-1.4.0.tar.gz"
-    sha256 "48e6ba7422b0885c9bbd8ac8fdf5c4e1306c3499b82d489944609cc4eae8ecbd"
+    url "https://files.pythonhosted.org/packages/64/2e/af4475c32b4378b0e92a587adb1aa3ec53e3450fd3e5fe0372a874531c00/hf_xet-1.4.2-cp37-abi3-macosx_11_0_arm64.whl"
+    sha256 "e9b38d876e94d4bdcf650778d6ebbaa791dd28de08db9736c43faff06ede1b5a"
   end
 
   resource "httpcore" do
@@ -246,8 +245,8 @@ class LocalWhisper < Formula
   end
 
   resource "murmurhash" do
-    url "https://files.pythonhosted.org/packages/23/2e/88c147931ea9725d634840d538622e94122bceaf346233349b7b5c62964b/murmurhash-1.0.15.tar.gz"
-    sha256 "58e2b27b7847f9e2a6edf10b47a8c8dd70a4705f45dccb7bf76aeadacf56ba01"
+    url "https://files.pythonhosted.org/packages/ed/cc/630449bf4f6178d7daf948ce46ad00b25d279065fc30abd8d706be3d87e0/murmurhash-1.0.15-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "0861cb11039409eaf46878456b7d985ef17b6b484103a6fc367b2ecec846891d"
   end
 
   resource "networkx" do
@@ -276,8 +275,8 @@ class LocalWhisper < Formula
   end
 
   resource "preshed" do
-    url "https://files.pythonhosted.org/packages/bf/34/eb4f5f0f678e152a96e826da867d2f41c4b18a2d589e40e1dd3347219e91/preshed-3.0.12.tar.gz"
-    sha256 "b73f9a8b54ee1d44529cc6018356896cff93d48f755f29c134734d9371c0d685"
+    url "https://files.pythonhosted.org/packages/80/24/fd654a9c0f5f3ed1a9b1d8a392f063ae9ca29ad0b462f0732ae0147f7cee/preshed-3.0.12-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "ffe1fd7d92f51ed34383e20d8b734780c814ca869cfdb7e07f2d31651f90cdf4"
   end
 
   resource "pycparser" do
@@ -291,8 +290,8 @@ class LocalWhisper < Formula
   end
 
   resource "pydantic_core" do
-    url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
-    sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
+    url "https://files.pythonhosted.org/packages/5d/2d/7b7058842d5d9b7008cd1872f8ec38ac46b333170e8262ac28499675e156/pydantic_core-2.42.0-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "c43088e8a44ccb2a2329d83892110587ebe661090b546dd03624a933fc4cfd0d"
   end
 
   resource "pynput" do
@@ -351,8 +350,8 @@ class LocalWhisper < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/8b/71/41455aa99a5a5ac1eaf311f5d8efd9ce6433c03ac1e0962de163350d0d97/regex-2026.2.28.tar.gz"
-    sha256 "a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"
+    url "https://files.pythonhosted.org/packages/9e/06/3ef1ac6910dc3295ebd71b1f9bfa737e82cfead211a18b319d45f85ddd09/regex-2026.2.28-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "9b65d33a17101569f86d9c5966a8b1d7fbf8afdda5a8aa219301b0a80f58cf7d"
   end
 
   resource "requests" do
@@ -371,13 +370,13 @@ class LocalWhisper < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/20/af/3f2f423103f1113b36230496629986e0ef7e199d2aa8392452b484b38ced/rpds_py-0.30.0.tar.gz"
-    sha256 "dd8ff7cf90014af0c0f787eea34794ebf6415242ee1d6fa91eaba725cc441e84"
+    url "https://files.pythonhosted.org/packages/4d/a1/bca7fd3d452b272e13335db8d6b0b3ecde0f90ad6f16f3328c6fb150c889/rpds_py-0.30.0-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "6abc8880d9d036ecaafe709079969f56e876fcf107f7a8e9920ba6d5a3878d05"
   end
 
   resource "safetensors" do
-    url "https://files.pythonhosted.org/packages/29/9c/6e74567782559a63bd040a236edca26fd71bc7ba88de2ef35d75df3bca5e/safetensors-0.7.0.tar.gz"
-    sha256 "07663963b67e8bd9f0b8ad15bb9163606cd27cc5a1b96235a50d8369803b96b0"
+    url "https://files.pythonhosted.org/packages/e8/00/374c0c068e30cd31f1e1b46b4b5738168ec79e7689ca82ee93ddfea05109/safetensors-0.7.0-cp38-abi3-macosx_11_0_arm64.whl"
+    sha256 "94fd4858284736bb67a897a41608b5b0c2496c9bdb3bf2af1fa3409127f20d57"
   end
 
   resource "segments" do
@@ -436,8 +435,8 @@ class LocalWhisper < Formula
   end
 
   resource "srsly" do
-    url "https://files.pythonhosted.org/packages/cf/77/5633c4ba65e3421b72b5b4bd93aa328360b351b3a1e5bf3c90eb224668e5/srsly-2.5.2.tar.gz"
-    sha256 "4092bc843c71b7595c6c90a0302a197858c5b9fe43067f62ae6a45bc3baa1c19"
+    url "https://files.pythonhosted.org/packages/2f/a2/bc6fd484ed703857043ae9abd6c9aea9152f9480a6961186ee6c1e0c49e8/srsly-2.5.2-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "ac4790a54b00203f1af5495b6b8ac214131139427f30fcf05cf971dde81930eb"
   end
 
   resource "sympy" do
@@ -451,13 +450,13 @@ class LocalWhisper < Formula
   end
 
   resource "thinc" do
-    url "https://files.pythonhosted.org/packages/2f/3a/2d0f0be132b9faaa6d56f04565ae122684273e4bf4eab8dee5f48dc00f68/thinc-8.3.10.tar.gz"
-    sha256 "5a75109f4ee1c968fc055ce651a17cb44b23b000d9e95f04a4d047ab3cb3e34e"
+    url "https://files.pythonhosted.org/packages/b8/c7/4300838b6314ea727d789313e40bbef2cf307c9bab45a2cee2b5bda2cc44/thinc-9.1.1-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "e77f0877c567103601e58178bb0d24d227a081380e25ed8ab4d2f2f7438d6d6a"
   end
 
   resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/73/6f/f80cfef4a312e1fb34baf7d85c72d4411afde10978d4657f8cdd811d3ccc/tokenizers-0.22.2.tar.gz"
-    sha256 "473b83b915e547aa366d1eee11806deaf419e17be16310ac0a14077f1e28f917"
+    url "https://files.pythonhosted.org/packages/2e/47/174dca0502ef88b28f1c9e06b73ce33500eedfac7a7692108aec220464e7/tokenizers-0.22.2-cp39-abi3-macosx_11_0_arm64.whl"
+    sha256 "1e418a55456beedca4621dbab65a318981467a2b188e982a23e117f115ce5001"
   end
 
   resource "tqdm" do
@@ -516,17 +515,12 @@ class LocalWhisper < Formula
     sha256 "2603c370b3d8868095c68fdbe2b07b2af83a9f6c3b67e3aa5c29523edb886be7"
   end
 
-  # Resources that are distributed as platform-specific wheels (no sdist).
-  # These must be installed with pip allowing binary packages.
-  WHEEL_RESOURCES = %w[espeakng-loader mlx mlx-metal torch].freeze
-
   def install
-    # Install wheel-only resources first (they have no setup.py/pyproject.toml)
     venv = virtualenv_create(libexec, "python3.12")
-    WHEEL_RESOURCES.each do |name|
-      r = resource(name)
+
+    # Install all resources, auto-detecting wheels vs sdists
+    resources.each do |r|
       r.stage do
-        # Find the .whl file in the staged directory
         whl = Dir["*.whl"].first
         if whl
           venv.pip_install Pathname.pwd/whl
@@ -536,12 +530,6 @@ class LocalWhisper < Formula
       end
     end
 
-    # Install remaining resources (sdists) and the formula itself
-    resources.each do |r|
-      next if WHEEL_RESOURCES.include?(r.name)
-
-      r.stage { venv.pip_install Pathname.pwd }
-    end
     venv.pip_install_and_link buildpath
 
     # Build Swift UI if Xcode is available and macOS 26 SDK is present
