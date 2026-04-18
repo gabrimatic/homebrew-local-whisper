@@ -3,8 +3,8 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "546721c8f5ed008f8540eeefc4a57e5bd0bf650566c206e63a1a588f3d0cb09a"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "b0c960a205e761e2cde0e71199fe352a93c12995a594216721e4845a71088a9b"
   license "MIT"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
@@ -260,8 +260,8 @@ class LocalWhisper < Formula
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/74/1b/ee2abfc68e1ce728b2958b6ba831d65c62e1b13ce3017c13943f8f9b5b2e/numpy-2.4.3-cp312-cp312-macosx_11_0_arm64.whl"
-    sha256 "7395e69ff32526710748f92cd8c9849b361830968ea3e24a676f272653e8983e"
+    url "https://files.pythonhosted.org/packages/c5/f3/a983d28637bfcd763a9c7aafdb6d5c0ebf3d487d1e1459ffdb57e2f01117/numpy-2.4.4-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "23cbfd4c17357c81021f21540da84ee282b9c8fba38a03b7b9d09ba6b951421e"
   end
 
   resource "packaging" do
