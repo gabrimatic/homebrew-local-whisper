@@ -10,6 +10,7 @@ class LocalWhisper < Formula
 
   depends_on arch: :arm64
   depends_on "espeak-ng"
+  depends_on "ffmpeg"
   depends_on :macos
   depends_on "python@3.12"
 
