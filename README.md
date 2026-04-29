@@ -1,6 +1,6 @@
 # Homebrew Tap for Local Whisper
 
-Local voice transcription with grammar correction for macOS. All processing runs locally on Apple Silicon.
+On-device voice transcription with grammar correction for macOS. Runs locally on Apple Silicon.
 
 ## Install
 
@@ -18,7 +18,7 @@ brew services start local-whisper
 
 ## Usage
 
-Double-tap **Right Option** to record, tap to stop. Transcribed text is copied to your clipboard.
+Double-tap **Right Option** to record, tap to stop. Transcribed text goes to the clipboard.
 
 ```bash
 wh                    # Status and help
