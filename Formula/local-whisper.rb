@@ -216,8 +216,8 @@ class LocalWhisper < Formula
   end
 
   resource "kokoro-mlx" do
-    url "https://files.pythonhosted.org/packages/14/65/68bfaf36533808933af329e290063167409f7c280435ff620d2a62426493/kokoro_mlx-0.1.1-py3-none-any.whl"
-    sha256 "60a3b431aecf705d8a0d731666ecc298ba341d64ad4cd29db5cd60fa16e3148f"
+    url "https://files.pythonhosted.org/packages/96/b8/668d0932fe1992f0c873a19f30d34e36985c73ac1c9561c89313401abb11/kokoro_mlx-0.1.2-py3-none-any.whl"
+    sha256 "2f13cfb6bb3673f8387454c2ae196579c0b198f3a03899dab01bbfa526788e9c"
   end
 
   resource "language-tags" do
@@ -291,8 +291,8 @@ class LocalWhisper < Formula
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/5d/2d/7b7058842d5d9b7008cd1872f8ec38ac46b333170e8262ac28499675e156/pydantic_core-2.42.0-cp312-cp312-macosx_11_0_arm64.whl"
-    sha256 "c43088e8a44ccb2a2329d83892110587ebe661090b546dd03624a933fc4cfd0d"
+    url "https://files.pythonhosted.org/packages/aa/32/9c2e8ccb57c01111e0fd091f236c7b371c1bccea0fa85247ac55b1e2b6b6/pydantic_core-2.41.5-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "070259a8818988b9a84a449a2a7337c7f430a22acc0859c6b110aa7212a6d9c0"
   end
 
   resource "pynput" do
@@ -336,8 +336,8 @@ class LocalWhisper < Formula
   end
 
   resource "qwen3-asr-mlx" do
-    url "https://files.pythonhosted.org/packages/84/af/4c26a375e908a3ae16ef62b2e7a06db87e71b3d0ab1d4617b8ac0f562e21/qwen3_asr_mlx-0.1.0-py3-none-any.whl"
-    sha256 "db8f363179b5a5fb628cadf7001fb7f7fb946c372a9c1f5bfc531bc6732d07bb"
+    url "https://files.pythonhosted.org/packages/ad/eb/50b76eedf6afdc62749e16b51b090518ca6b5e846c62c82b7c447671846b/qwen3_asr_mlx-0.1.1-py3-none-any.whl"
+    sha256 "e962e99dba1fc27d6fc12e64be52632ea6502dce82b761f00a852975c9391e32"
   end
 
   resource "rdflib" do
@@ -456,8 +456,8 @@ class LocalWhisper < Formula
   end
 
   resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/2e/47/174dca0502ef88b28f1c9e06b73ce33500eedfac7a7692108aec220464e7/tokenizers-0.22.2-cp39-abi3-macosx_11_0_arm64.whl"
-    sha256 "1e418a55456beedca4621dbab65a318981467a2b188e982a23e117f115ce5001"
+    url "https://files.pythonhosted.org/packages/e2/6a/068ed9f6e444c9d7e9d55ce134181325700f3d7f30410721bdc8f848d727/tokenizers-0.23.1-cp310-abi3-macosx_11_0_arm64.whl"
+    sha256 "e0948bbb1ac1d7cdfc9fb6d62c596e3b7550036ad60ecd654a66ad273326324e"
   end
 
   resource "tqdm" do
