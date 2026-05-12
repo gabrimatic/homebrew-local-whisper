@@ -3,9 +3,9 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.2.tar.gz"
-  sha256 "cee06eacb799454f9ebc947cc807db4ec11944fffe1f420da17db7479ee1836b"
-  license "MIT"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.3.tar.gz"
+  sha256 "684d784852f3944669ce1262771a3300a9d00396004e60e67825fb55e76a35cd"
+  license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
   depends_on arch: :arm64
@@ -185,7 +185,7 @@ class LocalWhisper < Formula
     sha256 "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"
   end
 
-  resource "huggingface_hub" do
+  resource "huggingface-hub" do
     url "https://files.pythonhosted.org/packages/6f/75/ca21955d6117a394a482c7862ce96216239d0e3a53133ae8510727a8bcfa/huggingface_hub-1.7.1-py3-none-any.whl"
     sha256 "38c6cce7419bbde8caac26a45ed22b0cea24152a8961565d70ec21f88752bfaa"
   end
@@ -290,7 +290,7 @@ class LocalWhisper < Formula
     sha256 "e561593fccf61e8a20fc46dfc2dfe075b8be7d0188df33f221ad1f0139180f9d"
   end
 
-  resource "pydantic_core" do
+  resource "pydantic-core" do
     url "https://files.pythonhosted.org/packages/5d/2d/7b7058842d5d9b7008cd1872f8ec38ac46b333170e8262ac28499675e156/pydantic_core-2.42.0-cp312-cp312-macosx_11_0_arm64.whl"
     sha256 "c43088e8a44ccb2a2329d83892110587ebe661090b546dd03624a933fc4cfd0d"
   end
@@ -400,7 +400,7 @@ class LocalWhisper < Formula
     sha256 "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
   end
 
-  resource "smart_open" do
+  resource "smart-open" do
     url "https://files.pythonhosted.org/packages/5e/ea/dcdecd68acebb49d3fd560473a43499b1635076f7f1ae8641c060fe7ce74/smart_open-7.5.1-py3-none-any.whl"
     sha256 "3e07cbbd9c8a908bcb8e25d48becf1a5cbb4886fa975e9f34c672ed171df2318"
   end
@@ -480,7 +480,7 @@ class LocalWhisper < Formula
     sha256 "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
   end
 
-  resource "typing_extensions" do
+  resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl"
     sha256 "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
   end
@@ -557,7 +557,7 @@ class LocalWhisper < Formula
     sha256 "e973d487ee46aa8023ca00a139db6e09af053a37a032fe22f9ff0cc2e19c94b4"
   end
 
-  resource "lazy_loader" do
+  resource "lazy-loader" do
     url "https://files.pythonhosted.org/packages/8a/a1/8d812e53a5da1687abb10445275d41a8b13adb781bbf7196ddbcf8d88505/lazy_loader-0.5-py3-none-any.whl"
     sha256 "ab0ea149e9c554d4ffeeb21105ac60bed7f3b4fd69b1d2360a4add51b170b005"
   end
