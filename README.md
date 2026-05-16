@@ -5,16 +5,16 @@ On-device voice transcription with grammar correction for macOS. Runs locally on
 ## Install
 
 ```bash
-brew tap gabrimatic/local-whisper
-brew install local-whisper
+brew install gabrimatic/local-whisper/local-whisper
 ```
 
 ## Setup
 
 ```bash
-wh doctor --fix       # Downloads models (~2GB), checks permissions
-brew services start local-whisper
+wh setup
 ```
+
+`wh setup` downloads the default local model, checks Microphone and Accessibility permission, and starts the background service.
 
 ## Usage
 
@@ -22,6 +22,7 @@ Double-tap **Right Option** to record, tap to stop. Transcribed text goes to the
 
 ```bash
 wh                    # Status and help
+wh setup             # Run first-time setup again
 wh whisper "hello"    # Text-to-speech
 wh listen             # Record and transcribe
 wh config             # Edit settings

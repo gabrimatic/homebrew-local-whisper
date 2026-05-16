@@ -627,9 +627,9 @@ class LocalWhisper < Formula
               <key>CFBundleName</key>
               <string>Local Whisper</string>
               <key>CFBundleVersion</key>
-              <string>1.3.0</string>
+              <string>#{version}</string>
               <key>CFBundleShortVersionString</key>
-              <string>1.3.0</string>
+              <string>#{version}</string>
               <key>NSPrincipalClass</key>
               <string>NSApplication</string>
               <key>LSUIElement</key>
@@ -650,12 +650,6 @@ class LocalWhisper < Formula
     (var/"local-whisper").mkpath
     models_dir = Pathname.new(Dir.home)/".whisper/models"
     models_dir.mkpath
-    quiet_system libexec/"bin/python", "-m", "spacy", "download", "en_core_web_sm"
-    # Pre-download the default ASR model so the service works offline immediately
-    quiet_system libexec/"bin/python", "-c",
-      "from huggingface_hub import snapshot_download; " \
-      "snapshot_download('mlx-community/Qwen3-ASR-1.7B-bf16', " \
-      "cache_dir='#{models_dir}')"
   end
 
   service do
@@ -663,7 +657,6 @@ class LocalWhisper < Formula
     keep_alive false
     environment_variables PATH:                     "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin",
                           HF_HUB_CACHE:             "#{Dir.home}/.whisper/models",
-                          HF_HUB_OFFLINE:           "1",
                           HF_HUB_DISABLE_TELEMETRY: "1"
     log_path var/"log/local-whisper.log"
     error_log_path var/"log/local-whisper.log"
@@ -671,11 +664,11 @@ class LocalWhisper < Formula
 
   def caveats
     <<~EOS
-      First-time setup (downloads models, ~2GB):
-        wh doctor --fix
+      First-time setup:
+        wh setup
 
-      Start the background service:
-        brew services start local-whisper
+      This downloads the default local speech model, checks Microphone and
+      Accessibility permissions, and starts the background service.
 
       Usage:
         Double-tap Right Option to record, tap to stop.
@@ -687,6 +680,7 @@ class LocalWhisper < Formula
 
       CLI:
         wh status    Show service status
+        wh setup     Run first-time setup again
         wh whisper   Text-to-speech
         wh listen    Record and transcribe
         wh config    Edit configuration
