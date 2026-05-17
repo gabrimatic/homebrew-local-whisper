@@ -3,8 +3,8 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.6.tar.gz"
-  sha256 "be4604184340d2fb144cb1aa088a3e489165db85e167d29d399afc63b0d5be37"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.7.tar.gz"
+  sha256 "eac444f032f02ce6db7f16f85a63e75ec523563ca272be4aa03261f796948676"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
@@ -13,6 +13,8 @@ class LocalWhisper < Formula
   depends_on "ffmpeg"
   depends_on :macos
   depends_on "python@3.12"
+
+  preserve_rpath
 
   # macOS arm64 wheels (native extensions, no sdist build possible)
   resource "espeakng-loader" do
@@ -655,9 +657,10 @@ class LocalWhisper < Formula
   service do
     run [opt_bin/"wh", "_run"]
     keep_alive false
-    environment_variables PATH:                     "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin",
-                          HF_HUB_CACHE:             "#{Dir.home}/.whisper/models",
-                          HF_HUB_DISABLE_TELEMETRY: "1"
+    environment_variables PATH:                        "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+                          HF_HUB_CACHE:                "#{Dir.home}/.whisper/models",
+                          HF_HUB_DISABLE_TELEMETRY:    "1",
+                          HOMEBREW_NO_INSTALL_CLEANUP: "1"
     log_path var/"log/local-whisper.log"
     error_log_path var/"log/local-whisper.log"
   end
@@ -680,7 +683,12 @@ class LocalWhisper < Formula
 
       CLI:
         wh status    Show service status
+        wh start     Start the background service
+        wh stop      Stop the background service
+        wh restart   Restart the background service
         wh setup     Run first-time setup again
+        wh update    Update Local Whisper and restart the service
+        wh doctor    Check system health
         wh whisper   Text-to-speech
         wh listen    Record and transcribe
         wh config    Edit configuration
