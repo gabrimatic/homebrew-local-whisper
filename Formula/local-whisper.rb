@@ -3,8 +3,8 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.10.tar.gz"
-  sha256 "c2ea0dc2eda850190e2fa5c46bb907b1fa791f38c24287e5d7c8889ee9859810"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.11.tar.gz"
+  sha256 "a37af9a065aa3bb9e04971825a16a6e47484cf72636a639627977fb33489853d"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
@@ -312,9 +312,24 @@ class LocalWhisper < Formula
     sha256 "c8f6e2fb3b3e9214ab4864ef04eee18f592b46a986c86ea0113448b310520532"
   end
 
+  resource "pyobjc-framework-AVFoundation" do
+    url "https://files.pythonhosted.org/packages/a6/00/ca471e5dd33f040f69320832e45415d00440260bf7f8221a9df4c4662659/pyobjc_framework_avfoundation-12.1-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "bf634f89265b4d93126153200d885b6de4859ed6b3bc65e69ff75540bc398406"
+  end
+
   resource "pyobjc-framework-Cocoa" do
     url "https://files.pythonhosted.org/packages/95/bf/ee4f27ec3920d5c6fc63c63e797c5b2cc4e20fe439217085d01ea5b63856/pyobjc_framework_cocoa-12.1-cp312-cp312-macosx_10_13_universal2.whl"
     sha256 "547c182837214b7ec4796dac5aee3aa25abc665757b75d7f44f83c994bcb0858"
+  end
+
+  resource "pyobjc-framework-CoreAudio" do
+    url "https://files.pythonhosted.org/packages/a9/48/05b5192122e23140cf583eac99ccc5bf615591d6ff76483ba986c38ee750/pyobjc_framework_coreaudio-12.1-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "a5ad6309779663f846ab36fe6c49647e470b7e08473c3e48b4f004017bdb68a4"
+  end
+
+  resource "pyobjc-framework-CoreMedia" do
+    url "https://files.pythonhosted.org/packages/c8/ae/f773cdc33c34a3f9ce6db829dbf72661b65c28ea9efaec8940364185b977/pyobjc_framework_coremedia-12.1-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "161a627f5c8cd30a5ebb935189f740e21e6cd94871a9afd463efdb5d51e255fa"
   end
 
   resource "pyobjc-framework-CoreText" do
