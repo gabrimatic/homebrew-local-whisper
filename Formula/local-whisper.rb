@@ -3,8 +3,8 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.12.tar.gz"
-  sha256 "e73c5aac5c91d7b523cdaf0a545bd1c4dbda13efb15e60b87a9d174c2ae5abb6"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.13.tar.gz"
+  sha256 "ba72969575e51054128d7be3409e54fe7f3e8b981ffbcbe8bbec6212814078eb"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
@@ -288,13 +288,13 @@ class LocalWhisper < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/5a/87/b70ad306ebb6f9b585f114d0ac2137d792b48be34d732d60e597c2f8465a/pydantic-2.12.5-py3-none-any.whl"
-    sha256 "e561593fccf61e8a20fc46dfc2dfe075b8be7d0188df33f221ad1f0139180f9d"
+    url "https://files.pythonhosted.org/packages/fd/7b/122376b1fd3c62c1ed9dc80c931ace4844b3c55407b6fb2d199377c9736f/pydantic-2.13.4-py3-none-any.whl"
+    sha256 "45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/aa/32/9c2e8ccb57c01111e0fd091f236c7b371c1bccea0fa85247ac55b1e2b6b6/pydantic_core-2.41.5-cp312-cp312-macosx_11_0_arm64.whl"
-    sha256 "070259a8818988b9a84a449a2a7337c7f430a22acc0859c6b110aa7212a6d9c0"
+    url "https://files.pythonhosted.org/packages/19/95/6195171e385007300f0f5574592e467c568becce2d937a0b6804f218bc49/pydantic_core-2.46.4-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "962ccbab7b642487b1d8b7df90ef677e03134cf1fd8880bf698649b22a69371f"
   end
 
   resource "pynput" do
@@ -303,43 +303,43 @@ class LocalWhisper < Formula
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/64/5a/6b15e499de73050f4a2c88fff664ae154307d25dc04da8fb38998a428358/pyobjc_core-12.1-cp312-cp312-macosx_10_13_universal2.whl"
-    sha256 "818bcc6723561f207e5b5453efe9703f34bc8781d11ce9b8be286bb415eb4962"
+    url "https://files.pythonhosted.org/packages/24/be/4771f4fd786f0e1a2bd6d8931a72a5f3929b7bb1b28a1fe6ca8a08371c55/pyobjc_core-12.2-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "7677ed758a367bbbb5589d6f5276fb360a45c89168276c26162f61840b0fa03d"
   end
 
   resource "pyobjc-framework-ApplicationServices" do
-    url "https://files.pythonhosted.org/packages/37/a7/55fa88def5c02732c4b747606ff1cbce6e1f890734bbd00f5596b21eaa02/pyobjc_framework_applicationservices-12.1-cp312-cp312-macosx_10_13_universal2.whl"
-    sha256 "c8f6e2fb3b3e9214ab4864ef04eee18f592b46a986c86ea0113448b310520532"
+    url "https://files.pythonhosted.org/packages/b8/e4/0c7c5a48f88ab7510365559facf060f7c059dd4d5e39571d07d96a2b84a8/pyobjc_framework_applicationservices-12.2-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "36a03ae7168657379e3ad96397f3ebb15e6c617b96901a919c7610ce2de0007a"
   end
 
   resource "pyobjc-framework-AVFoundation" do
-    url "https://files.pythonhosted.org/packages/a6/00/ca471e5dd33f040f69320832e45415d00440260bf7f8221a9df4c4662659/pyobjc_framework_avfoundation-12.1-cp312-cp312-macosx_10_13_universal2.whl"
-    sha256 "bf634f89265b4d93126153200d885b6de4859ed6b3bc65e69ff75540bc398406"
+    url "https://files.pythonhosted.org/packages/cf/0b/491ec7a65d9b6301a8a55a1607bb9079afc18946bb6c87944d51781b5e70/pyobjc_framework_avfoundation-12.2-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "593d2ec35f6799d9011f414247570457d8eaa68a1ce1381b4df2ab1daec509f5"
   end
 
   resource "pyobjc-framework-Cocoa" do
-    url "https://files.pythonhosted.org/packages/95/bf/ee4f27ec3920d5c6fc63c63e797c5b2cc4e20fe439217085d01ea5b63856/pyobjc_framework_cocoa-12.1-cp312-cp312-macosx_10_13_universal2.whl"
-    sha256 "547c182837214b7ec4796dac5aee3aa25abc665757b75d7f44f83c994bcb0858"
+    url "https://files.pythonhosted.org/packages/30/66/5a91f2eddfced4f26bc2df2bcebb7f5f10c5bf5666aff6fa00ded845af07/pyobjc_framework_cocoa-12.2-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "06cb92d97d1af9d1f459ae6cf1d1a7b824c12d3aff1b709885966acd6b7208c2"
   end
 
   resource "pyobjc-framework-CoreAudio" do
-    url "https://files.pythonhosted.org/packages/a9/48/05b5192122e23140cf583eac99ccc5bf615591d6ff76483ba986c38ee750/pyobjc_framework_coreaudio-12.1-cp312-cp312-macosx_10_13_universal2.whl"
-    sha256 "a5ad6309779663f846ab36fe6c49647e470b7e08473c3e48b4f004017bdb68a4"
+    url "https://files.pythonhosted.org/packages/b4/11/b2c641e4aaf79ff664c081ea09a79366c60406b36e80bece6faec83bf7a5/pyobjc_framework_coreaudio-12.2-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "038293a480ec3afc902541ece05404fffdb915f0a6ad60fc81156beeb256cc5f"
   end
 
   resource "pyobjc-framework-CoreMedia" do
-    url "https://files.pythonhosted.org/packages/c8/ae/f773cdc33c34a3f9ce6db829dbf72661b65c28ea9efaec8940364185b977/pyobjc_framework_coremedia-12.1-cp312-cp312-macosx_10_13_universal2.whl"
-    sha256 "161a627f5c8cd30a5ebb935189f740e21e6cd94871a9afd463efdb5d51e255fa"
+    url "https://files.pythonhosted.org/packages/99/db/966cad806594831379785af07669e5f2c1784e88c775a381cbcba215cfa3/pyobjc_framework_coremedia-12.2-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "2eaddb2f4e25d7b6f32d4b85b828cc89ce6ae5502d531c2913b90d93f85fc2ae"
   end
 
   resource "pyobjc-framework-CoreText" do
-    url "https://files.pythonhosted.org/packages/cd/0f/ddf45bf0e3ba4fbdc7772de4728fd97ffc34a0b5a15e1ab1115b202fe4ae/pyobjc_framework_coretext-12.1-cp312-cp312-macosx_10_13_universal2.whl"
-    sha256 "d246fa654bdbf43bae3969887d58f0b336c29b795ad55a54eb76397d0e62b93c"
+    url "https://files.pythonhosted.org/packages/72/8a/52cef4b31d5a6d3c9c426759bd256229fbf6757efec1b7f1ba5c2d051621/pyobjc_framework_coretext-12.2-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "c1845fbdb96f605c7146c478c5d562961d77aadba6cc40e166fade08e11a730f"
   end
 
   resource "pyobjc-framework-Quartz" do
-    url "https://files.pythonhosted.org/packages/e9/9b/780f057e5962f690f23fdff1083a4cfda5a96d5b4d3bb49505cac4f624f2/pyobjc_framework_quartz-12.1-cp312-cp312-macosx_10_13_universal2.whl"
-    sha256 "7730cdce46c7e985535b5a42c31381af4aa6556e5642dc55b5e6597595e57a16"
+    url "https://files.pythonhosted.org/packages/96/98/3b1fa78ddb1cd10d0edd4d49a3d00301d941f535694ac444fbed53ec7504/pyobjc_framework_quartz-12.2-cp312-cp312-macosx_10_13_universal2.whl"
+    sha256 "8b238979d62b6e0b90d466477eee968d8f2f6720e850af2472e01cef349293b4"
   end
 
   resource "pyparsing" do
@@ -428,8 +428,8 @@ class LocalWhisper < Formula
   end
 
   resource "soundfile" do
-    url "https://files.pythonhosted.org/packages/a0/e5/58fd1a8d7b26fc113af244f966ee3aecf03cb9293cb935daaddc1e455e18/soundfile-0.13.1-py2.py3-none-macosx_11_0_arm64.whl"
-    sha256 "743f12c12c4054921e15736c6be09ac26b3b3d603aef6fd69f9dde68748f2593"
+    url "https://files.pythonhosted.org/packages/63/7a/dfdd6f8c748988427119f75eb860a3cedd858d1aea1fe28f39ad8559ef22/soundfile-0.14.0-py2.py3-none-macosx_11_0_arm64.whl"
+    sha256 "d828d35a059626da52f1415b5faee610aeab393319cb3fc4a9aef47b619fc14c"
   end
 
   resource "spacy" do
@@ -527,11 +527,11 @@ class LocalWhisper < Formula
     sha256 "6433ea84e1cfacf32021d2a4ee909554ade7fd392caa6f7c13f1f4bf7b8e8748"
   end
 
-  # parakeet-mlx + librosa dependency closure (v1.5.0)
+  # parakeet-mlx + librosa dependency closure (v0.5.2)
 
   resource "parakeet-mlx" do
-    url "https://files.pythonhosted.org/packages/76/38/2ea2d9dfc35295b600e86583baf6cbb9f3242a52cbea98625ad788fb9afb/parakeet_mlx-0.5.1-py3-none-any.whl"
-    sha256 "869cfe8d7a16b00f4a49d2f42a76210aca638681bd972911f4ab4d7bf9ca36b6"
+    url "https://files.pythonhosted.org/packages/f4/54/09a3501c74f1ef54a36002534661cb89a0b2f098fcad87fe64f515a0dba7/parakeet_mlx-0.5.2-py3-none-any.whl"
+    sha256 "50afb6ddb62237a6486e214482c25ef12759832fda3cd514e159938fa5970d9c"
   end
 
   resource "dacite" do
