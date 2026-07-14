@@ -3,8 +3,8 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.6.15.tar.gz"
-  sha256 "d7cd90f1f90479494fa6abaf4ce5a69e3c36cf0ec36fa2eae4827f2a0fc83f23"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "194f5bb0365fb83994191592e9c26e47304fe41ea7fe3fb3c77887e51f9e0bf7"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
