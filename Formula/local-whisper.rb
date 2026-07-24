@@ -6,7 +6,7 @@ class LocalWhisper < Formula
   url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "4117240f8497e35bad24d20aac8f431ca69cd098b8b25ab96d0044af467cbc8f"
   license "PolyForm-Noncommercial-1.0.0"
-  revision 3
+  revision 4
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
   depends_on arch: :arm64
@@ -39,8 +39,8 @@ class LocalWhisper < Formula
   end
 
   resource "native-ui" do
-    url "https://github.com/gabrimatic/local-whisper/releases/download/v1.10.1/LocalWhisperUI-1.10.1-arm64.zip"
-    sha256 "1dc444d7203d5d055a196501c3cb4c20076c0fc96a577f4d1b3332c429efc31a"
+    url "https://github.com/gabrimatic/local-whisper/releases/download/v1.10.1/LocalWhisperUI-1.10.1-arm64-homebrew.zip"
+    sha256 "95a2cf5ffe43667c57c11b3c9fa50ff761aabfa7604abfbf0a620aa32a128d80"
   end
 
   resource "Jinja2" do
