@@ -6,7 +6,7 @@ class LocalWhisper < Formula
   url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "4117240f8497e35bad24d20aac8f431ca69cd098b8b25ab96d0044af467cbc8f"
   license "PolyForm-Noncommercial-1.0.0"
-  revision 1
+  revision 2
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
   depends_on arch: :arm64
@@ -36,6 +36,11 @@ class LocalWhisper < Formula
   resource "torch" do
     url "https://files.pythonhosted.org/packages/d3/54/a2ba279afcca44bbd320d4e73675b282fcee3d81400ea1b53934efca6462/torch-2.10.0-2-cp312-none-macosx_11_0_arm64.whl"
     sha256 "13ec4add8c3faaed8d13e0574f5cd4a323c11655546f91fbe6afa77b57423574"
+  end
+
+  resource "native-ui" do
+    url "https://github.com/gabrimatic/local-whisper/releases/download/v1.10.1/LocalWhisperUI-1.10.1-arm64.zip"
+    sha256 "1dc444d7203d5d055a196501c3cb4c20076c0fc96a577f4d1b3332c429efc31a"
   end
 
   resource "Jinja2" do
@@ -622,50 +627,8 @@ class LocalWhisper < Formula
 
     venv.pip_install_and_link buildpath
 
-    # Build the native UI and Apple Speech helper when the macOS 26 SDK is available.
-    # Homebrew's build environment does not expose /usr/bin/swift through `which`,
-    # so resolve the active Xcode/Command Line Tools compiler with xcrun.
-    swift_ui_dir = buildpath/"LocalWhisperUI"
-    swift = Utils.safe_popen_read("/usr/bin/xcrun", "--find", "swift").strip
-    if swift_ui_dir.exist? && !swift.empty?
-      sdk_check = quiet_system(swift, "package", "--package-path", swift_ui_dir.to_s, "dump-package")
-      if sdk_check
-        system swift, "build", "--disable-sandbox", "-c", "release", "--package-path", swift_ui_dir.to_s
-        swift_bin = swift_ui_dir/".build/release/LocalWhisperUI"
-        speech_bin = swift_ui_dir/".build/release/LocalWhisperSpeech"
-        if swift_bin.exist? && speech_bin.exist?
-          app_dir = prefix/"LocalWhisperUI.app/Contents"
-          (app_dir/"MacOS").mkpath
-          cp swift_bin, app_dir/"MacOS/LocalWhisperUI"
-          cp speech_bin, app_dir/"MacOS/LocalWhisperSpeech"
-          (app_dir/"Info.plist").write <<~XML
-            <?xml version="1.0" encoding="UTF-8"?>
-            <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-            <plist version="1.0">
-            <dict>
-              <key>CFBundleExecutable</key>
-              <string>LocalWhisperUI</string>
-              <key>CFBundleIdentifier</key>
-              <string>com.local-whisper.ui</string>
-              <key>CFBundleName</key>
-              <string>Local Whisper</string>
-              <key>CFBundleVersion</key>
-              <string>#{version}</string>
-              <key>CFBundleShortVersionString</key>
-              <string>#{version}</string>
-              <key>NSPrincipalClass</key>
-              <string>NSApplication</string>
-              <key>LSUIElement</key>
-              <true/>
-              <key>NSHighResolutionCapable</key>
-              <true/>
-              <key>CFBundlePackageType</key>
-              <string>APPL</string>
-            </dict>
-            </plist>
-          XML
-        end
-      end
+    resource("native-ui").stage do
+      prefix.install "LocalWhisperUI.app"
     end
   end
 
