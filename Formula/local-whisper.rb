@@ -6,6 +6,7 @@ class LocalWhisper < Formula
   url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "4117240f8497e35bad24d20aac8f431ca69cd098b8b25ab96d0044af467cbc8f"
   license "PolyForm-Noncommercial-1.0.0"
+  revision 1
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
   depends_on arch: :arm64
@@ -625,7 +626,7 @@ class LocalWhisper < Formula
     # Homebrew's build environment does not expose /usr/bin/swift through `which`,
     # so resolve the active Xcode/Command Line Tools compiler with xcrun.
     swift_ui_dir = buildpath/"LocalWhisperUI"
-    swift = Utils.safe_popen_read("xcrun", "--find", "swift").strip
+    swift = Utils.safe_popen_read("/usr/bin/xcrun", "--find", "swift").strip
     if swift_ui_dir.exist? && !swift.empty?
       sdk_check = quiet_system(swift, "package", "--package-path", swift_ui_dir.to_s, "dump-package")
       if sdk_check
