@@ -3,8 +3,8 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "8f23ce62814f860529d1ea6dd396ed7e4a12f20ee46e4f29d24b03f873ca8de2"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "c0487125af5d61f06c829dc6e5d01cc86bd3a8e49c5ca49426de55e398e2c728"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
@@ -353,8 +353,8 @@ class LocalWhisper < Formula
   end
 
   resource "qwen3-asr-mlx" do
-    url "https://files.pythonhosted.org/packages/ad/eb/50b76eedf6afdc62749e16b51b090518ca6b5e846c62c82b7c447671846b/qwen3_asr_mlx-0.1.1-py3-none-any.whl"
-    sha256 "e962e99dba1fc27d6fc12e64be52632ea6502dce82b761f00a852975c9391e32"
+    url "https://files.pythonhosted.org/packages/5d/00/3e6f9bce7bada23390f753be71d79834cc695841a087a0211481161802b5/qwen3_asr_mlx-0.2.0-py3-none-any.whl"
+    sha256 "bfd9c08e01482780556d52782b6a25ebe4a921e2e817984c324e88dbe6fcc16b"
   end
 
   resource "rdflib" do
