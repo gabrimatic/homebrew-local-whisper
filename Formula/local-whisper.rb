@@ -3,8 +3,8 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "c0487125af5d61f06c829dc6e5d01cc86bd3a8e49c5ca49426de55e398e2c728"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.10.1.tar.gz"
+  sha256 "4117240f8497e35bad24d20aac8f431ca69cd098b8b25ab96d0044af467cbc8f"
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
@@ -621,17 +621,22 @@ class LocalWhisper < Formula
 
     venv.pip_install_and_link buildpath
 
-    # Build Swift UI if Xcode is available and macOS 26 SDK is present
+    # Build the native UI and Apple Speech helper when the macOS 26 SDK is available.
+    # Homebrew's build environment does not expose /usr/bin/swift through `which`,
+    # so resolve the active Xcode/Command Line Tools compiler with xcrun.
     swift_ui_dir = buildpath/"LocalWhisperUI"
-    if swift_ui_dir.exist? && which("swift")
-      sdk_check = quiet_system("swift", "package", "--package-path", swift_ui_dir.to_s, "dump-package")
+    swift = Utils.safe_popen_read("xcrun", "--find", "swift").strip
+    if swift_ui_dir.exist? && !swift.empty?
+      sdk_check = quiet_system(swift, "package", "--package-path", swift_ui_dir.to_s, "dump-package")
       if sdk_check
-        system "swift", "build", "--disable-sandbox", "-c", "release", "--package-path", swift_ui_dir.to_s
+        system swift, "build", "--disable-sandbox", "-c", "release", "--package-path", swift_ui_dir.to_s
         swift_bin = swift_ui_dir/".build/release/LocalWhisperUI"
-        if swift_bin.exist?
+        speech_bin = swift_ui_dir/".build/release/LocalWhisperSpeech"
+        if swift_bin.exist? && speech_bin.exist?
           app_dir = prefix/"LocalWhisperUI.app/Contents"
           (app_dir/"MacOS").mkpath
           cp swift_bin, app_dir/"MacOS/LocalWhisperUI"
+          cp speech_bin, app_dir/"MacOS/LocalWhisperSpeech"
           (app_dir/"Info.plist").write <<~XML
             <?xml version="1.0" encoding="UTF-8"?>
             <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
