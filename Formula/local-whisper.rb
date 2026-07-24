@@ -6,7 +6,7 @@ class LocalWhisper < Formula
   url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "4117240f8497e35bad24d20aac8f431ca69cd098b8b25ab96d0044af467cbc8f"
   license "PolyForm-Noncommercial-1.0.0"
-  revision 2
+  revision 3
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
   depends_on arch: :arm64
@@ -615,6 +615,8 @@ class LocalWhisper < Formula
 
     # Install all resources, auto-detecting wheels vs sdists
     resources.each do |r|
+      next if r.name == "native-ui"
+
       r.stage do
         whl = Dir["*.whl"].first
         if whl
