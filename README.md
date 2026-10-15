@@ -30,7 +30,8 @@ wh config             # Edit settings
 
 ## Requirements
 
-- macOS on Apple Silicon (M1/M2/M3/M4)
+- macOS on Apple Silicon
+- macOS 26 or later for the menu bar app; earlier macOS runs the background service headless
 - ~3GB disk space (code + models)
 
 ## More
