@@ -6,6 +6,7 @@ class LocalWhisper < Formula
   url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.11.1.tar.gz"
   sha256 "840e91246a7f1c53260f62006d629dedda157a770d74b5724f56edd3cfb6c14c"
   license "PolyForm-Noncommercial-1.0.0"
+  revision 1
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
   depends_on arch: :arm64
@@ -258,8 +259,8 @@ class LocalWhisper < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/7e/cd/fe58041e9011f307c490e3e17dd48cc516448f7c698a3f2d9d9d65d7e6a8/networkx-3.7-py3-none-any.whl"
-    sha256 "e3fd2c13a7814cee3746340d8d7f8598a67f16a58bf47fb7f8793fab6efca1b0"
+    url "https://files.pythonhosted.org/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl"
+    sha256 "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"
   end
 
   resource "num2words" do
@@ -268,8 +269,8 @@ class LocalWhisper < Formula
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/ff/a9/bac826765e971d8e16e2064e9ac7525fd69b40ac17c905033a7f5442023f/numpy-2.5.4-cp312-cp312-macosx_11_0_arm64.whl"
-    sha256 "b11e8fda06a7d69f15ebf542660b74466c2e51094800c1fb794f47ad4faeef17"
+    url "https://files.pythonhosted.org/packages/ea/12/92c4c131527599e8288d6918e888d88726f84d805d784b771f32408aeaef/numpy-2.4.6-cp312-cp312-macosx_11_0_arm64.whl"
+    sha256 "ebfb099f8dcf083deef3ac1ca4c1503f387cf76296fcb3816b66f5ecb5f54fdb"
   end
 
   resource "packaging" do
@@ -533,8 +534,13 @@ class LocalWhisper < Formula
   end
 
   resource "librosa" do
-    url "https://files.pythonhosted.org/packages/96/14/0b2e4cc8017796dc8f69de740708601832c1e8d5377166eedb4db0a92264/librosa-1.0.0-py3-none-any.whl"
-    sha256 "5910a6c0e1b2e494b92758c1615a7acbd0515a2315e138927ba2982f2af88857"
+    url "https://files.pythonhosted.org/packages/b5/ba/c63c5786dfee4c3417094c4b00966e61e4a63efecee22cb7b4c0387dda83/librosa-0.11.0-py3-none-any.whl"
+    sha256 "0b6415c4fd68bff4c29288abe67c6d80b587e0e1e2cfb0aad23e4559504a7fa1"
+  end
+
+  resource "audioread" do
+    url "https://files.pythonhosted.org/packages/7e/16/fbe8e1e185a45042f7cd3a282def5bb8d95bb69ab9e9ef6a5368aa17e426/audioread-3.1.0-py3-none-any.whl"
+    sha256 "b30d1df6c5d3de5dcef0fb0e256f6ea17bdcf5f979408df0297d8a408e2971b4"
   end
 
   resource "numba" do
@@ -548,8 +554,8 @@ class LocalWhisper < Formula
   end
 
   resource "scipy" do
-    url "https://files.pythonhosted.org/packages/05/4a/78c6285577c375e7cf27277ea8ee6961224327f1e1a0c44af5f17f23635c/scipy-1.18.1-cp312-cp312-macosx_12_0_arm64.whl"
-    sha256 "e708533e8b2ae2497d65346538a7dcc92814410b25b81432eac66de0f2af8265"
+    url "https://files.pythonhosted.org/packages/b2/02/cf107b01494c19dc100f1d0b7ac3cc08666e96ba2d64db7626066cee895e/scipy-1.17.1-cp312-cp312-macosx_12_0_arm64.whl"
+    sha256 "fcb310ddb270a06114bb64bbe53c94926b943f5b7f0842194d585c65eb4edd76"
   end
 
   resource "scikit-learn" do
