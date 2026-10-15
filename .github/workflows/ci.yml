@@ -6,21 +6,23 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   formula-check:
     name: Formula check
-    runs-on: macos-15
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - name: Tap local checkout
-        run: |
-          mkdir -p "$(brew --repository)/Library/Taps/gabrimatic"
-          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/gabrimatic/homebrew-local-whisper"
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Style check
         run: brew style gabrimatic/local-whisper/local-whisper
-
-      - name: Ruby syntax
-        run: ruby -c Formula/local-whisper.rb
