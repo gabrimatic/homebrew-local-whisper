@@ -26,3 +26,16 @@ jobs:
 
       - name: Style check
         run: brew style gabrimatic/local-whisper/local-whisper
+
+  resources-check:
+    name: Python resources match the release lock
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10
+
+      - name: Compare formula resources with the release lock
+        run: uv run scripts/formula_resources.py

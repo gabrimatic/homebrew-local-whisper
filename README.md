@@ -34,6 +34,22 @@ wh config             # Edit settings
 - macOS 26 or later for the menu bar app; earlier macOS runs the background service headless
 - ~3GB disk space (code + models)
 
+## Maintaining the formula
+
+The formula's Python resources must match the runtime dependency set in the
+release's `uv.lock`, evaluated for the formula's Python on Apple Silicon. For a
+new release, point `url` and `sha256` at the new tag tarball and drop any
+`revision` line, then:
+
+```bash
+uv run scripts/formula_resources.py --write   # pin resources to the release lock
+uv run scripts/formula_resources.py           # check; CI runs the same check
+brew style Formula/local-whisper.rb
+```
+
+`--write` takes every URL and sha256 from PyPI. Update the `native-ui` resource
+to the release's menu-app zip by hand.
+
 ## More
 
 See the [main repository](https://github.com/gabrimatic/local-whisper) for full documentation.
