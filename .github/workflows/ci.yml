@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Set up uv
-        uses: astral-sh/setup-uv@v10
+        uses: astral-sh/setup-uv@v10.3.0
 
       - name: Compare formula resources with the release lock
         run: uv run scripts/formula_resources.py
