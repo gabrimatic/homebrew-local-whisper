@@ -3,10 +3,9 @@ class LocalWhisper < Formula
 
   desc "Local voice transcription with grammar correction for macOS"
   homepage "https://github.com/gabrimatic/local-whisper"
-  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.11.1.tar.gz"
-  sha256 "840e91246a7f1c53260f62006d629dedda157a770d74b5724f56edd3cfb6c14c"
+  url "https://github.com/gabrimatic/local-whisper/archive/refs/tags/v1.11.2.tar.gz"
+  sha256 "68d50e4c8c41ce500a6595efa0fab649edd576f352450227f43a79ff9c2e4a5a"
   license "PolyForm-Noncommercial-1.0.0"
-  revision 1
   head "https://github.com/gabrimatic/local-whisper.git", branch: "main"
 
   depends_on arch: :arm64
@@ -39,8 +38,8 @@ class LocalWhisper < Formula
   end
 
   resource "native-ui" do
-    url "https://github.com/gabrimatic/local-whisper/releases/download/v1.11.1/LocalWhisperUI-1.11.1-arm64-homebrew.zip"
-    sha256 "5a26a9b741759bf1fa41ec451bcfff0ed2febe7c1444548b2d8960e776d4428e"
+    url "https://github.com/gabrimatic/local-whisper/releases/download/v1.11.2/LocalWhisperUI-1.11.2-arm64-homebrew.zip"
+    sha256 "43326cbaa8c6e76a3f7ccf8642bda33d734841acf6659f588257f8a3f68e738f"
   end
 
   resource "Jinja2" do
@@ -104,8 +103,8 @@ class LocalWhisper < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl"
-    sha256 "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+    url "https://files.pythonhosted.org/packages/c4/51/29046e48f693c54e5b7412216d447a1d8362c9653148d98c02cdf65fa733/certifi-2026.10.19-py3-none-any.whl"
+    sha256 "42d35340cc5b9ba78e818ddbff0c5b1c2b779de448a340fd1b989f5fa8670e1b"
   end
 
   resource "cffi" do
